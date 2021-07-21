@@ -20,13 +20,12 @@ def how_many(a,n,k):
       else:
         arr[i]=arr[i%10**x]
   
-  total=[0]*(n+1)
-  total[0]=0
+  total=[0]
   for i in range(a,n+1):
-    total[i]=total[i-1]+arr[i]
+    total.append(arr[i])
 
 
-  return total[n]
+  return sum(total)
 
 
 
