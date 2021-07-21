@@ -1,11 +1,14 @@
+
 import math
 
-n=int(input())
-k=int(input())
+a,b,k=input().split()
+a=int(a)
+n=int(b)
+k=int(k)
 
 
-def how_many(n,k):
-  arr=[0]*(n+1)
+def how_many(a,n,k):
+  arr=[0]*(n+10)
   arr[0]=0
   arr[k]=1
 
@@ -16,7 +19,15 @@ def how_many(n,k):
         arr[i]=1+arr[i%(10**x)]
       else:
         arr[i]=arr[i%10**x]
+  
+  total=[0]*(n+1)
+  total[0]=0
+  for i in range(a,n+1):
+    total[i]=total[i-1]+arr[i]
 
-  return arr[n]
 
-print(how_many(n,k))
+  return total[n]
+
+
+
+print(how_many(a,n,k))
