@@ -120,72 +120,26 @@ def solution(numbers, hand):
         elif i in middle:
             if i==2:
                 k=[3,1,0,1,2,1,2,3,2,3,4,4]
-                if k[l]<k[r]:
-                    answer+="L"
-                    l=i
-                elif k[l]>k[r]:
-                    answer+="R"
-                    r=i
-                elif k[l]==k[r]:
-                    if hand=="right":
-                        answer+="R"
-                        r=i
-                    else:
-                        answer+="L"
-                        l=i
-                        
             elif i==5:
-                k=[2,2,1,2,1,0,1,2,1,2,3,3]
-                if k[l]<k[r]:
-                    answer+="L"
-                    l=i
-                elif k[l]>k[r]:
-                    answer+="R"
-                    r=i
-                elif k[l]==k[r]:
-                    if hand=="right":
-                        answer+="R"
-                        r=i
-                    else:
-                        answer+="L"
-                        l=i
-                        
+                k=[2,2,1,2,1,0,1,2,1,2,3,3]   
             elif i==8:
                 k=[1,3,2,3,2,1,2,1,0,1,2,2]
-                if k[l]<k[r]:
-                    answer+="L"
-                    l=i
-                elif k[l]>k[r]:
-                    answer+="R"
-                    r=i
-                elif k[l]==k[r]:
-                    if hand=="right":
-                        answer+="R"
-                        r=i
-                    else:
-                        answer+="L"
-                        l=i
-                
             elif i==0:
                 k=[0,4,3,4,3,2,3,2,1,2,1,1]
-                if k[l]<k[r]:
-                    answer+="L"
-                    l=i
-                elif k[l]>k[r]:
+                
+            if k[l]<k[r]:
+                answer+="L"
+                l=i
+            elif k[l]>k[r]:
+                answer+="R"
+                r=i
+            elif k[l]==k[r]:
+                if hand=="right":
                     answer+="R"
                     r=i
-                elif k[l]==k[r]:
-                    if hand=="right":
-                        answer+="R"
-                        r=i
-                    else:
-                        answer+="L"
-                        l=i
-                    
-            
-
+                else:
+                    answer+="L"
+                    l=i
                         
-                        
-            
-    
+        
     return answer
