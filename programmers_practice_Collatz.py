@@ -1,3 +1,4 @@
+'''
 def solution(num):
     
     
@@ -19,3 +20,20 @@ def solution(num):
             
     
     return x
+
+'''
+import math
+def solution(n):
+    
+    x=round(math.sqrt(n))
+    
+    arr=[]
+    for i in range(1,x+1):
+        if n%i==0:
+            arr.append(i)
+            arr.append(n/i)
+    
+    arr=set(arr)
+    
+    answer=sum(arr)
+    return answer
