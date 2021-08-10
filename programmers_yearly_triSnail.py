@@ -1,42 +1,40 @@
 def solution(n):
     arr=[]
-
-    for i in range(1,n+1):
-         arr.append([0]*i)
-
-
     end=0
     for i in range(1,n+1):
-         end+=i
+        arr.append([0]*i)
+        end+=i
+
+
+
 
     k=1
-    c=0
 
 
-    while True:
-        
-        for i in range(1+c*2,n+1-2*c):
-                arr[i-1][c]=k
-                k+=1
-            
-        for i in range(1,n-2*c):
-                arr[n-c-1][i]=k
-                k+=1
+    for c in range(0,(n//3)+1):
+        for i in range(0,n-3*c):
+            arr[i+2*c][c]=k
+            k+=1
 
-        j=0
-        if n-2-c>2*c:
-            for i in range(n-2-c,0+2*c,-1):
-                arr[i][n-2-2*c-j]=k
-                k+=1
-                j+=1
-        c+=1
-        if k==end+1:
-            break
+        for i in range(0,n-2-3*c):
+            arr[n-1-c][1+c+i]=k
+            k+=1
+
+
+        for i in range(0,n-3*c-1):
+            arr[n-1-i-c][n-1-i-2*c]=k
+            k+=1
+
+
 
     arr_total=[]
-
     for i in range(0,n):
-         arr_total+=arr[i]
+        arr_total+=arr[i]
+    
+    if n==1:
+        arr_total=[1]
+        
+    
 
     
     return arr_total
