@@ -1,20 +1,32 @@
 def solution(a):
-    answer = 2
-    if len(a)<=3:
-        answer=len(a)
+    answer = 1
+      
     
+    if len(a)>3:
+        s=a[1:]
+        k=a.index(min(s))
+        if k==len(a)-1:
+            for i in range(1,len(a)):
+                if a[i]<a[0]:
+                    answer+=1
+        else:
+            
+            
+            answer=answer+len(a)-k
+            tem1=a[:k+1]
+            
+            for i in range(1,len(tem1)-1):
+                if tem1[i]<tem1[0]:
+                    answer+=1
+            
+        
+            
     else:
-        for i in range(1,len(a)-1):
+        answer=len(a)
+            
+            
+            
 
-
-            min1=min(a[:i])
-
-            min2=min(a[i+1:])
-
-            if a[i]>min1 and a[i]>min2:
-                continue
-            else:
-                answer+=1
         
     
     return answer
